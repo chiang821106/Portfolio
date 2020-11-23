@@ -1,0 +1,59 @@
+/* 背景顏色 */
+
+body {
+    background-color: #f4f6f9;
+}
+
+
+/* -----------------------導覽列------------------------ */
+
+/* 導覽列高度 */
+
+#navBar {
+    height: 85px;
+    border-bottom: rgba(120, 120, 120, 0.3) 1px solid;
+    background-color: #FFF;
+}
+
+/* 導覽列連結間距與樣式 */
+
+.navbar-nav {
+    margin-left: 20px;
+}
+
+.navLink {
+    margin: 0 20px 0 20px;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    transition-duration: 500ms;
+    color: black !important;
+}
+
+/* 漢堡選單設定 */
+
+.show {
+    background-color: #fff;
+}
+
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.navbar-toggler:focus {
+    outline: 0;
+}
+
+/* 管理員帳號名 */
+
+.name {
+    padding: 8px;
+}
+
+/* 右上登出距離 */
+
+.nav-item {
+    margin-right: 30px;
+    font-size: 18px;
+}

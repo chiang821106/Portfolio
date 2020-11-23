@@ -1,0 +1,104 @@
+/* -----------------------管理者設定------------------------ */
+
+/* 標題 */
+
+.title {
+    margin: 115px auto 50px;
+}
+
+/* 按鈕間距 */
+
+.btn {
+    margin-right: 15px;
+}
+
+/* 共"X"筆資料文字 */
+
+.countData {
+    margin-top: 15px;
+    text-align: right;
+}
+
+#totalData {
+    color: #f14e32f3;
+}
+
+/* 表格文字垂直置中 */
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+/* 表格樣式 */
+
+.tableStyle {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #e4e8f0;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .125), 0 1px 3px rgba(0, 0, 0, .2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table {
+    margin: 20px auto;
+}
+
+/* 新增按鈕樣式 */
+
+.btn:focus {
+    box-shadow: none;
+}
+
+/* -----------------------對話框------------------------ */
+
+/* 頁首文字背景 */
+
+.modal-header {
+    color: white;
+    font-size: 18px;
+    border-bottom-color: #f1b432;
+    background: #F2994A;
+    background-image: linear-gradient(120deg, #fda085 0%,  #f6d365 100%);
+}
+
+.modal-content {
+    border: none;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* 抬頭X按鈕樣式 */
+
+.close {
+    color: white !important;
+    font-size: 30px;
+}
+
+.close:active, .close:focus {
+    outline-width: 0;
+}
+
+/* 輸入框間距 */
+
+.form-control {
+    margin-left: 15px;
+}
+
+/* 頁尾背景 */
+
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+/* 確認按鈕距離 */
+
+.modalBtn {
+    position: relative;
+    left: 28%;
+}
+
+/* 其他按鈕陰影 */
+
+.btn-info, .btn-success, .btn-primary, .btn-danger {
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0;
+}

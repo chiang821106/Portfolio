@@ -1,0 +1,169 @@
+/* -----------------------導覽列------------------------ */
+
+/* 導覽列高度 */
+
+#navBar {
+    height: 85px;
+    border-bottom: rgba(120, 120, 120, 0.3) 1px solid;
+    padding: 0 0 0 30px;
+    margin: 0;
+    background-color: #FFF;
+    /* flex-wrap: nowrap; */
+}
+
+/* 導覽列連結間距與樣式 */
+
+.navbar-nav {
+    margin-left: 20px;
+}
+
+.navLink {
+    margin: 0 20px 0 20px;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    transition-duration: 500ms;
+    color: black !important;
+}
+
+/* 搜索外框設定 */
+
+#iconBox {
+    border-style: none;
+    border: solid rgba(120, 120, 120, 0.3);
+    border-width: 0 0 0 1px;
+}
+
+#searchText {
+    border-style: none;
+    padding: 0px 0px 0px 50px;
+    width: 200px;
+    /* height: 85px; */
+    transition-duration: 500ms;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#searchText:focus {
+    outline: 0;
+    width: 250px;
+}
+
+/* 隱藏搜索紐 */
+
+#searchBtn {
+    display: none;
+}
+
+/* 調整搜索ICON位置及大小 */
+
+.searchIcon {
+    position: relative;
+    left: 30px;
+    height: 15px;
+    width: 15px;
+}
+
+/* 頂部會員、購物車ICON */
+
+.topIconBox {
+    /* height: 85px; */
+    width: 90px;
+    margin-right: 0;
+    padding-right: 0;
+    border: solid rgba(120, 120, 120, 0.3);
+    border-width: 0 0 0 1px;
+}
+
+.topIcon {
+    height: 20px;
+    width: 20px;
+}
+
+/* 會員、購物車ICON超連結 */
+
+.topIconA {
+    /* position: relative; */
+    z-index: 1;
+    display: block;
+    text-align: center;
+    line-height: 80px;
+}
+
+/* 購物車計數 */
+
+#count {
+    font-size: 18px;
+    color: #f14e32f3;
+    font-weight: 700;
+    position: absolute;
+    top: -10px;
+}
+
+/* ----------------底部----------------------- */
+
+/* 底部版面 */
+
+.footerArea {
+    position: relative;
+    z-index: 1;
+    background-color: #252525;
+    padding: 60px 0 50px 0;
+}
+
+/* 超連結樣式 */
+
+.footerAreaA {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    font-weight: 400;
+    padding: 0 10px;
+}
+
+.footerAreaA:hover {
+    color: #fff;
+    text-decoration: none;
+    transition-duration: 800ms;
+}
+
+/* 版權文字 */
+
+#copyright {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ----------------TOP鍵----------------------- */
+
+/* 向上箭頭樣式 */
+
+#scrollUp {
+    bottom: 75px;
+    height: 30px;
+    right: 65px;
+    width: 30px;
+    position: fixed;
+    z-index: 999;
+    /* display: none; */
+}
+
+/* 向上箭頭背景 */
+
+.scrollUpBg {
+    background-color: #f1b432;
+    bottom: 70px;
+    box-shadow: 0 2px 6px 0 rgba(17, 17, 17, 0.5);
+    height: 40px;
+    right: 60px;
+    width: 40px;
+    position: fixed;
+    z-index: 998;
+    opacity: 0;
+    transition: 0.7s all ease;
+}
+
+/* 顯現向上圖案 */
+
+.active {
+    opacity: 1;
+}

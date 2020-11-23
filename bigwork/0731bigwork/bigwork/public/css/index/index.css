@@ -1,0 +1,107 @@
+/* 背景測試 */
+
+body {
+    /* background-color: whitesmoke; */
+    z-index: -1;
+}
+
+/* 輪播圖片 */
+
+.carouselImg {
+    width: 100%;
+    height: 40vw;
+    margin-top: 50px;
+}
+
+/* 輪播按鈕 */
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    height: 70px;
+    width: 70px;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel-indicators li{
+    height: 10px;
+    width: 10px;
+    background-color: #666;
+    border-radius:50%;
+    margin-right: 20px;
+
+}
+
+/* ------------熱銷設計卡片-------------- */
+/* 標題 */
+.title{
+margin-bottom: 50px;
+}
+
+/* 卡片樣式 */
+
+.card {
+    margin-bottom: 50px;
+    height: 500px;
+}
+
+.card, .card-body, .card-footer {
+    border: 0;
+}
+
+.card-body,.card-footer{
+    max-height: 50px;
+}
+
+.cardRight {
+    padding: 0;
+}
+
+.cardBox {
+    height: 330px;
+    width: 360px;
+}
+
+
+
+/* hover換圖 */
+
+.card {
+    position: relative;
+}
+
+.card-img-top {
+    position: absolute;
+    height: 330px;
+    width: 360px;
+}
+
+.hoverImg:hover {
+    opacity: 0;
+}
+
+.hoverImgB{
+    opacity: 1;
+}
+
+.hoverImgB:hover{
+    opacity: 1;
+}
+
+/* 淡入動畫 */
+
+.textAnimationY {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: 0.7s all ease;
+}
+
+.appearY {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+}

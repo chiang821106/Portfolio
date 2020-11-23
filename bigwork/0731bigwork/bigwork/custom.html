@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ------------------------------------------ -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="stylesheet" href="./public/css/common/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/common/common.css">
+    <link rel="stylesheet" href="./public/css/index/index.css">
+
+    <script defer src="./public/js/index/index.js"></script>
+    <script defer src="./public/js/common/common.js"></script>
+    <script src="./public/js/common/jquery.min.js"></script>
+    <script src="./public/js/common/popper.min.js"></script>
+    <script src="./public/js/common/bootstrap.min.js"></script>
+    <!-- ---------------------------------------------------------- -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script> -->
+    <script src="fabric.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+
+        #fcolor [type=radio] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* IMAGE STYLES */
+        #fcolor [type=radio]+img {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        /* CHECKED STYLES */
+        #fcolor [type=radio]:checked+img {
+            outline: 2px solid #f00;
+        }
+
+        #fcolor {
+            background-color: #F5F5F5;
+            vertical-align: middle;
+        }
+
+        #imgfb {
+            margin: 0px 100px;
+            border: 1px solid black;
+        }
+
+        #font,
+        #back {
+            position: static;
+            opacity: 1;
+            width: 20px;
+            height: 20px;
+            font-size: 80px;
+            text-align: top;
+        }
+
+        /* tr{
+            border: 1px solid black;
+        } */
+        /* tr td:nth-of-type(1){
+            border-right:1px solid black;
+        } */
+        table {
+            border-collapse: collapse;
+            font-weight: bold;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="top" style="margin-bottom: 90px;">
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navBar">
+
+            <!-- Logo -->
+            <a class="nav-brand" href="index.html"><img src="public/img/common/logo.png" alt=""></a>
+
+            <!-- 漢堡選單 -->
+            <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- 導覽標籤 -->
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item navLink"><a class="nav-link" href="#">動手設計</a></li>
+                    <li class="nav-item navLink"><a class="nav-link" href="#">直接購買</a></li>
+                </ul>
+            </div>
+
+            <!-- 導覽列ICON -->
+            <div class="d-flex clearfix " id="iconBox">
+                <!-- 搜索框 -->
+
+                <div class="nav-item ml-auto align-self-center" id="searchBox">
+                    <img src="./public/img/common/search.svg" alt="搜索" class="searchIcon">
+                </div>
+                <div class="nav-item ml-auto align-self-center">
+                    <form class="form-inline" action="">
+                        <input type="search" name="searchText" id="searchText" placeholder="搜尋">
+                        <button type="submit" id="searchBtn"></button>
+                    </form>
+                </div>
+
+                <!-- 會員 -->
+                <div class="nav-item ml-auto  topIconBox">
+                    <a href="#" class="topIconA"><img src="./public/img/common/user.svg" alt="會員登入" class="topIcon"></a>
+                </div>
+
+                <!-- 購物車 -->
+                <div class="nav-item ml-auto topIconBox">
+                    <a href="#" class="topIconA"><img src="./public/img/common/cart.svg" alt="購物車" class="topIcon">
+                        <span id="count">3</span>
+                    </a>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+    <div style="display: flex;">
+        <div class="" style="flex: 1;">
+            <img src="images/clothes/common/grayb.png" alt="" id="imgfb" width="400px" height="500px">
+            <div class="d-inline-block" style="margin-left: 50px;">
+                <button class="btn btn-primary " id="undoBtn">上一步</button>
+                <button class="btn btn-primary" id="redoBtn">下一步</button>
+                <a class="btn btn-primary" id="clearupload" href="#"
+                    onclick="clearmycanvas()">清除圖片</a>
+                <!-- <button id="saveBtn">save</button>
+                <button id="loadBtn">load</button> -->
+                <!-- <textarea name="" id="textarea" cols="30" rows="10">123</textarea>
+                <br> -->
+                <button class="btn btn-primary" id="itxtBtn">增加文字</button>
+                <a class="btn btn-primary" id="adownload" href="#" download="dsphoto.png"
+                    onclick="downphoto(this)">下載圖片</a>
+                <!-- <a class="btn btn-primary" id="abgdownload" href="#" download="bgphoto.png"
+                    onclick="downphoto(this)">下載圖片(含背景)</a> -->
+            </div>
+        </div>
+        <div id="d1" style="position:absolute;"><canvas id="clothes"></canvas></div>
+        <div id="d2" style="position:absolute;display: none;"><canvas id="clotheshidden"></canvas></div>
+        <div style="flex:1">
+
+            <!-- <fieldset style="text-align: center;vertical-align: middle;margin-top: 50px;">
+                    <legend>自己動手設計</legend> -->
+            <h2>自己動手設計</h2>
+            <table style="height: 500px;width: 400px;">
+                <tr>
+                    <td><img src="images/icon/upload.png" alt="" width="80px" height="100px"></td>
+                    <td style="vertical-align: top;">
+                        <label><input type="radio" name="fbclothes" id="font" value="font" style="vertical-align:bottom;" checked>
+                        設計衣服前面</label>
+
+                        <label><input type="radio" name="fbclothes" id="back" value="back" style="vertical-align:bottom;">
+                        設計衣服背面</label>
+                        <div>
+                            <a id="fontbtn" class="btn btn-outline-success" href="#" role="button"
+                                data-toggle="modal" data-target="#staticBackdropfont">上傳正面圖片
+                            </a>
+                            <a id="backbtn" class="btn btn-outline-success invisible" href="#" role="button"
+                                data-toggle="modal" data-target="#staticBackdropback">上傳背面圖片
+                            </a>
+                            <div class="text-danger text-sm">
+                                <p>白T:印雙面+NT$ 150/件</p>
+                                　<p>彩T:印雙面+NT$ 200/件</p>
+                            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="images/icon/clothes1.png" alt="" width="80px" height="100px"></td>
+                    <td>
+                        <p>請選擇版型</p>
+                        <label><input type="radio" id="common" value="common" name="modeling" checked>大眾版</label>
+                        <label><input type="radio" id="children" value="children" name="modeling">兒童版</label>
+                        <label><input type="radio" id="woman" value="woman" name="modeling">女版</label>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><img src="images/icon/drawing.png" alt="" width="80px" height="100px"></td>
+                    <td name="fcolor" id="fcolor">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="btn btn-success btn-block btn-lg">確定上傳</button></td>
+                </tr>
+            </table>
+            <!-- 上傳正面圖片對話框 -->
+            <div class="modal fade" id="staticBackdropfont" data-backdrop="static" data-keyboard="false" role="dialog"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">請上傳正面圖片</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <form method="post" enctype="multipart/form-data"
+                                action="http://localhost/php/bigwork/receivefont.php"> -->
+                            <div class="form-group">
+                                <input type="file" onchange="readURL(this)" name="file" class="form-control-file"
+                                    targetID="uploadfont">
+                                <img id="uploadfont" src="#" alt="" width="300px" height="200px">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary" onclick="btnok('F')">確定</button>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+            <!-- 上傳背面圖片對話框 -->
+            <div class="modal fade" id="staticBackdropback" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">請上傳正面圖片</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <form method="post" enctype="multipart/form-data"
+                                action="http://localhost/php/bigwork/receivefont.php"> -->
+                            <div class="form-group">
+                                <input type="file" onchange="readURL(this)" name="file" class="form-control-file"
+                                    targetID="uploadback">
+                                <img id="uploadback" src="#" alt="" width="300px" height="200px">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" onclick="btnok('B')">確定</button>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- </fieldset> -->
+
+
+        </div>
+    </div>
+
+
+    <!-- TOP鍵 -->
+    <a href="#top" class="scrollUpBg"><img src="./public/img/common/arrow-up.svg" id="scrollUp"></a>
+
+    <footer class="footerArea clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- Single Widget Area -->
+                <div class="col-lg-6 col-md-12">
+                    <div class=" d-flex ">
+                        <!-- Logo -->
+                        <div>
+                            <a href="index.html"><img src="./public/img/common/logo2.png" alt=""></a>
+                        </div>
+                        <!-- Footer Menu -->
+                        <div>
+                            <ul class="d-flex" type="none">
+                                <li><a href="#" class="footerAreaA">動手設計</a></li>
+                                <li><a href="#" class="footerAreaA">直接購買</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <span id="copyright">Copyright ©2020 獨衣無二有限公司 | All rights reserved</span>
+                </div>
+
+
+            </div>
+
+        </div>
+    </footer>
+    <script>
+        var position = $('#imgfb').offset();
+        var x = position.left;
+        var y = position.top;
+        var form = document.getElementById('fcolor');
+        var colorchildren = [00, 02, 03, 04, 07, 08, 99];
+        var colorcommon = [00, 01, 02, 03, 04, 06, 07, 08, 11, 12, 13, 99];
+        var colorwoman = [00, 01, 02, 03, 04, 07, 08, 11, 99];
+        // for (i = 0; i <= 14; i++) {
+        function intocolor(color) {
+            form.innerHTML = "";
+            form.innerHTML += '<div>請選擇衣服顏色</div>';
+            color.forEach(function (v, i) {
+                if (i == Math.round(color.length / 2)) {
+                    form.innerHTML += "</br>"
+                }
+                if(v==8){
+                    var colorchecked ="checked";
+                }
+                form.innerHTML += `<label>
+        <input type="radio" name="fbcolor" ${colorchecked} onchange="colorChange(this);" value="${v}">
+        <img src="images/colors/icon_color_${v}.jpg" alt=""></label>`;
+
+            })
+        };
+        intocolor(colorcommon);
+        // }
+        var mycanvas = new fabric.Canvas('clothes', {
+            width: 183,
+            height: 300,
+            // left: abc.width/4,
+            // top: abc.height/4,
+
+        })
+        d1.style.top = y + 100 + 'px';
+        d1.style.left = x + 110 + 'px';
+        d2.style.top = y + 'px';
+        d2.style.left = x + 400 + 'px';
+        // const rect = new fabric.Rect({
+        //     width: 50,
+        //     height: 50,
+        //     top: 0,
+        //     left: 0
+        // })
+        // mycanvas.add(rect);
+
+        // var clothescolor = "images/clothes/common/0_490x530_99.png";
+
+        // function inpo(intophoto) {
+        //     fabric.Image.fromURL(intophoto, (img) => {
+        //         const oImg = img.set({
+        //             left: 0,
+        //             top: 0
+        //         })
+        //         img.scaleToHeight(mycanvas.height / 10);
+        //         img.scaleToWidth(mycanvas.width / 10);
+        //         mycanvas.setBackgroundImage(oImg).renderAll()
+        //         // adownload.href = mycanvas.toDataURL("image/png")
+        //     })
+        // }
+        // inpo(clothescolor);
+        function clearmycanvas(){
+            mycanvas.clear()
+            mycanvas.renderAll()
+        }
+
+        // var aaaa = "images/clothes/common/0_490x530_13_b.png";
+        // imgel(aaaa)
+        // var aaaa1 = "images/clothes/common/0_490x530_04_b.png";
+        // imgel(aaaa1)
+        function imgel(imgsrc) {
+            const imgEl = document.createElement('img')
+            imgEl.src = imgsrc;
+            imgEl.onload = () => {
+                const image = new fabric.Image(imgEl, {
+                    scaleX: mycanvas.width / imgEl.width, // 大小設置為原來的 0.1
+                    scaleY: mycanvas.height / imgEl.height, // 大小設置為原來的 0.1            
+                    top: 0,
+                    left: 0
+                })
+                mycanvas.add(image)
+
+            }
+        }
+
+        function itxt() {
+            const iText = new fabric.IText('雙擊我編輯', {
+                fontSize: 35,
+                top: mycanvas.height - mycanvas.height / 4,
+                left: 0
+            })
+            mycanvas.add(iText);
+        }
+        let state = mycanvas.toJSON()
+        const undo = []
+        const redo = []
+
+        mycanvas.on('object:modified', e => {
+            undo.push(state)
+            state = JSON.stringify(mycanvas)
+            redo.length = 0
+        })
+
+        function doUndo() {
+            if (!undo.length) {
+                alert('目前沒有動作可復原')
+                return
+            }
+            let lastJSON = undo.pop()
+            mycanvas.loadFromJSON(lastJSON)
+            redo.push(state)
+            state = lastJSON
+        }
+
+        function doRedo() {
+            if (!redo.length) {
+                alert('目前沒有動作可復原')
+                return
+            }
+            let lastJSON = redo.pop()
+            mycanvas.loadFromJSON(lastJSON)
+            // 在做下一步時把目前狀態 push 到 undo 陣列
+            undo.push(state)
+            state = lastJSON
+        }
+
+        // var bgimg = '"backgroundImage":{"type":"image","version":"3.6.3","originX":"left","originY":"top","left":0,"top":0,"width":600,"height":650,"fill":"rgb(0,0,0)","stroke":null,"strokeWidth":0,"strokeDashArray":null,"strokeLineCap":"butt","strokeDashOffset":0,"strokeLineJoin":"miter","strokeMiterLimit":4,"scaleX":0.66,"scaleY":0.77,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"clipTo":null,"backgroundColor":"","fillRule":"nonzero","paintFirst":"fill","globalCompositeOperation":"source-over","transformMatrix":null,"skewX":0,"skewY":0,"crossOrigin":"","cropX":0,"cropY":0,"src":"http://127.0.0.1:5500/0729_2bigwork/bigwork/images/clothes/common/grayb.png","filters":[]}}';
+        // var objectimg = '{"version":"3.6.3","objects":[{"type":"image","version":"3.6.3","originX":"left","originY":"top","left":100,"top":100,"width"';
+        // var savejson2 = "";
+
+        function savecanvas() {
+
+            // var json = JSON.stringify(outerObjs);
+            saveJSON = JSON.stringify(mycanvas)
+            // var rebgimage = /"backgroundImage":{[\s\S]*}/;
+            // var reobject = /{"version":"3.6.3","objects":\[{"type":"image","version":"3.6.3","originX":"left","originY":"top","left":[0-9]{1,2},"top":[0-9]{1,2},"width"/;
+            // var savejson1 = saveJSON.replace(reobject, objectimg)
+            // savejson2 = savejson1.replace(rebgimage, bgimg)
+            alert('save canvas!')
+            textarea.innerHTML = saveJSON
+        }
+        function loadcanvas() {
+            alert('load canvas!')
+            textarea.innerHTML = ''
+            canvashidden.loadFromJSON(saveJSON)
+        }
+
+
+        var canvashidden = new fabric.Canvas('clotheshidden', {
+            height: imgfb.height,
+            width: imgfb.width,
+            isDrawingMode: true,
+            hoverCursor: 'progress',
+            freeDrawingCursor: 'all-scroll',
+        })
+        downphoto()
+        function downphoto() {
+
+            // if (dp.id == "adownload") {
+            mycanvas.discardActiveObject()
+            mycanvas.renderAll();
+            const imghidden = document.createElement('img')
+            imghidden.src = imgfb.src;
+            imghidden.onload = () => {
+                const image = new fabric.Image(imghidden, {
+                    scaleX: canvashidden.width / imghidden.width,
+                    scaleY: canvashidden.height / imghidden.height,
+                    top: 0,
+                    left: 0
+                })
+                // canvashidden.add()
+
+                const imageContainer = new fabric.Image(mycanvas.lowerCanvasEl, {
+                    scaleX: 183 / mycanvas.lowerCanvasEl.width,
+                    scaleY: 300 / mycanvas.lowerCanvasEl.height,
+                    top: 100,
+                    left: 110
+                });
+                canvashidden.add(image, imageContainer);
+            //     var items = canvashidden.getObjects();
+            // items[0].id = "items_id"
+            // console.log(items[0]);
+
+
+                //             for (var prop in imageContainer) {
+                //   console.log(prop + ':' + imageContainer[prop]);
+                // }
+            }
+            // 只按一次下載會失敗
+            adownload.href = canvashidden.toDataURL();
+
+
+            
+            // 或  items[0].set("id", "items_id0")
+
+
+            // var json = JSON.stringify(outerObjs);
+            // saveJSON = JSON.stringify(mycanvas)
+            // var rebgimage = /"backgroundImage":{[\s\S]*}/;
+            // var reobject = /{"version":"3.6.3","objects":\[{"type":"image","version":"3.6.3","originX":"left","originY":"top","left":[0-9]{1,2},"top":[0-9]{1,2},"width"/;
+            // var savejson1 = saveJSON.replace(reobject, objectimg)
+            // savejson2 = savejson1.replace(rebgimage, bgimg)
+            // // alert('save canvas!')
+            // textarea.innerHTML = savejson2
+
+
+
+            //         let abccanvas = mycanvas;
+            //         console.log(abccanvas.backgroundImage);
+            //     abccanvas.backgroundImage = 0;
+            //     console.log(abccanvas.backgroundImage);
+
+            //     adownload.href = abccanvas.toDataURL("image/png");
+            //     // inpo(clothescolor);
+            //     }else if(dp.id=="abgdownload"){
+
+        }
+
+
+        //             $("#adownload").click(function(){ 
+        //                 downphoto()
+        //     var win=window.open(); 
+        //     win.document.write("<img src='"+canvashidden.toDataURL()+"'/>"); 
+        // }); 
+        // }
+
+        // canvashidden.clear();
+        // const imghidden = document.createElement('img')
+        // imghidden.src = imgfb.src;
+        // imghidden.onload = () => {
+        //     const image = new fabric.Image(imghidden, {
+        //         scaleX: canvashidden.width / imghidden.width,
+        //         scaleY: canvashidden.height / imghidden.height,
+        //         top: 0,
+        //         left: 0
+        //     })
+        //     canvashidden.add(image)
+        // }
+        // var imgInstance = new fabric.Image(mycanvas, {
+        //     left: 100,
+        //     top: 100,
+        //     width: 183,
+        //     height: 220,
+        // clipTo: function (ctx) {
+        //     ctx.rect( / 2 - sx, dheight / 2 - sy, swidth, sheight);
+        // }
+        // });
+        // canvashidden.add(imgInstance);
+
+        // canvashidden.drawImage(mycanvas, 0, 0, 183, 220, 0, 0, 183, 220);
+
+
+
+        //   var mycanvashidden = document.getElementById('clotheshidden');
+
+        //   var ctxhidden = mycanvashidden.getContext('2d');
+
+        //   ctxhidden.setBackgroundImage(imgfb,
+        //             () => canvas.renderAll())
+
+
+
+
+        // }
+
+
+        // }
+        var fbclothes = "", modeling = "common", fbcolor = "08";
+        function colorChange(y) {
+            let x = y.value;
+            if (x < 10) {
+                x = "0" + x
+                fbcolor = x;
+                clothesch('fbcolor');
+            } else {
+                fbcolor = y.value;
+                clothesch('fbcolor');
+            }
+        }
+        function clothesch(x) {
+            canvashidden.clear()
+            if (x.name == "fbclothes") {
+                if (x.value == "font") {
+                    fbclothes = "";
+                    fontbtn.classList.remove("invisible");
+                    let y = backbtn.classList.contains("invisible")
+                    if (!y) {
+                        backbtn.classList.add("invisible")
+                    }
+                } else {
+                    fbclothes = "_b";
+                    backbtn.classList.remove("invisible");
+                    let y = fontbtn.classList.contains("invisible")
+                    if (!y) {
+                        fontbtn.classList.add("invisible")
+                    }
+                }
+            } else if (x.name == 'modeling') {
+                fbcolor = "08"
+                modeling = x.value;
+                switch (x.value) {
+                    case 'common':
+                        intocolor(colorcommon)
+                        break;
+                    case 'children':
+                        intocolor(colorchildren)
+                        break;
+                    case 'woman':
+                        intocolor(colorwoman)
+                        break;
+                }
+
+
+            } else if (x.name == 'fbcolor') {
+                fbcolor = x.value;
+            }
+            imgfb.src = "images/clothes/" + modeling + "/0_490x530_" + fbcolor + fbclothes + ".png";
+            downphoto()
+        }
+        // if (x.vlaue == "font") {
+        //     imgfb.src = "/images/clothes/common/grayf.png";
+        //     fontbtn.classList.remove("invisible");
+        //     let x = backbtn.classList.contains("invisible")
+        //     if (!x) {
+        //         backbtn.classList.add("invisible")
+        //     }
+        // } else {
+        //     imgfb.src = "/images/clothes/common/grayb.png";
+        //     backbtn.classList.remove("invisible");
+        //     let y = fontbtn.classList.contains("invisible")
+        //     if (!y) {
+        //         fontbtn.classList.add("invisible")
+        //     }
+        // }
+
+
+
+        font.addEventListener('click', function () { clothesch(this) })
+        back.addEventListener('click', function () { clothesch(this) })
+        common.addEventListener('click', function () { clothesch(this) })
+        children.addEventListener('click', function () { clothesch(this) })
+        woman.addEventListener('click', function () { clothesch(this) })
+        undoBtn.addEventListener('click', doUndo)
+        redoBtn.addEventListener('click', doRedo)
+        itxtBtn.addEventListener('click', itxt)
+        // saveBtn.addEventListener('click', savecanvas)
+        // loadBtn.addEventListener('click', loadcanvas)
+        // btnok.addEventListener('click', btnok)
+
+
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                var uploadfb = input.getAttribute("targetID");
+
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    var img = document.getElementById(uploadfb);
+
+                    img.setAttribute("src", e.target.result)
+
+                }
+
+                reader.readAsDataURL(input.files[0]);
+
+            }
+
+        }
+        function btnok(i) {
+            if (i == "F") {
+                let x = uploadfont.src;
+                imgel(x);
+                $("#staticBackdropfont").modal("hide");
+            } else {
+                let x = uploadback.src;
+                imgel(x);
+                $("#staticBackdropback").modal("hide");
+
+            }
+            $('.modal-backdrop').remove();
+        }
+
+
+    </script>
+
+</body>
+
+</html>

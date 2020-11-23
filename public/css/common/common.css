@@ -1,0 +1,293 @@
+/* -----------------------導覽列------------------------ */
+
+/* 字體引用 */
+
+/* @font-face {
+    font-family: jf-openhuninn;
+    src: url(../../fonts/jf-openhuninn-1.1.ttf);
+} */
+
+body {
+    font-family: 'sans-serif';
+}
+
+/* 上方LOGO */
+
+.logoNav {
+    width: 140px;
+    margin-top: 3px;
+    margin-left: 30px;
+}
+
+@media(max-width:550px) {
+    .logoNav {
+        margin-left: 10px;
+    }
+}
+
+
+/* 導覽列高度 */
+
+#navBar {
+    height: 70px;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255);
+}
+
+/* 導覽列連結間距與樣式 */
+
+.navbarul {
+    margin-left: 20px;
+}
+
+.navLink {
+    margin: 0 20px 0 20px;
+    font-size: 18px;
+    letter-spacing:3px;
+}
+
+.nav-link:hover {
+    transition-duration: 500ms;
+    color: #f1b432 !important;
+}
+
+/* 搜索外框設定 */
+
+#iconBox {
+    border-style: none;
+    border: solid rgba(120, 120, 120, 0.3);
+    border-width: 0px;
+    position: relative;
+}
+
+#searchText {
+    border-style: none;
+    padding: 0px 0px 0px 50px;
+    width: 200px;
+    transition-duration: 500ms;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#searchText:focus {
+    outline: 0;
+    width: 250px;
+}
+
+/* 隱藏搜索紐 */
+
+#searchBtn {
+    display: none;
+}
+
+/* 調整搜索ICON位置及大小 */
+
+.searchIcon {
+    position: relative;
+    left: 30px;
+    height: 15px;
+    width: 15px;
+}
+
+/* 頂部會員、購物車ICON */
+
+.topIconBox {
+    /* height: 85px; */
+    width: 90px;
+    margin-right: 0;
+    padding-right: 0;
+    border: solid rgba(120, 120, 120, 0.3);
+    /* border-width: 0 0 0 1px; */
+    border-width: 0px;
+}
+
+.topIcon {
+    height: 20px;
+    width: 20px;
+}
+
+/* 會員、購物車ICON超連結 */
+
+.topIconA {
+    position: relative;
+    z-index: 1;
+    /* display: block; */
+    text-align: center;
+    line-height: 80px;
+    margin-left: 20px;
+}
+
+@media(max-width:991px) {
+    #top {
+        position: relative;
+    }
+    .navbar-toggler {
+        margin-right: 30px;
+    }
+    .nav-brand {
+        position: absolute;
+        left: 0px;
+    }
+    /* 漢堡選單 */
+    .navbar-toggler, .navbar-toggler:active, .navbar-toggler:focus {
+        position: absolute;
+        right: 0px;
+        border-color: none !important;
+        outline: none !important;
+    }
+    /* 會員ICON */
+    .rwdUserIcon {
+        position: absolute;
+        right: 25%;
+    }
+    /* 購物車ICON */
+    .rwdCartIcon {
+        position: absolute;
+        right: 15%;
+    }
+    .rwdUser {
+        position: absolute;
+        right: 35%;
+        margin-right: 10px;
+    }
+    /* 選單背景 */
+    #navContent {
+        background-color: #fff;
+        margin-top: 70px;
+    }
+    /* 選單連結 */
+    .nav-link {
+        text-align: right;
+    }
+}
+
+/* 購物車計數 */
+
+#count {
+    font-size: 16px;
+    color: #f14e32f3;
+    font-weight: 700;
+    position: absolute;
+    /* top: -10px; */
+    bottom: -15px;
+}
+
+/* 會員/管理者姓名樣式 */
+
+.rwdUser a {
+    font-size: 18px;
+    color: rgba(0, 0, 0, .5);
+    text-decoration: none;
+    letter-spacing:3px;
+}
+
+.rwdUser a:hover,.rwdUser a:focus,.rwdUser a:active {
+    transition-duration: 500ms;
+    color: #f1b432 !important;
+    background-color: #fff;
+
+}
+
+.dropdown-menu-right{
+    right: 80px;
+    top: 55px;
+}
+
+@media(max-width:991px) {
+
+
+    .dropdown-menu-right {
+        right: 0;
+        top: 30px;
+        left: auto;
+    }
+}
+
+
+@media(max-width:500px) {
+    .rwdUser a{
+        font-size: 16px;
+    }
+}
+
+
+/* ----------------底部----------------------- */
+
+/* 底部版面 */
+
+.footerArea {
+    position: relative;
+    z-index: 1;
+    background-color: #252525;
+    padding: 60px 0 50px 0;
+}
+
+/* 下方LOGO */
+
+.logoFooter {
+    width: 140px;
+}
+
+/* 超連結樣式 */
+
+.footerAreaA {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    font-weight: 400;
+    padding: 0 10px;
+    letter-spacing:3px;
+}
+
+.footerAreaA:hover {
+    color: #fff;
+    text-decoration: none;
+    transition-duration: 800ms;
+}
+
+@media(max-width:770px) {
+    .footerLink {
+        display: none;
+    }
+}
+
+/* 版權文字 */
+
+#copyright {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ----------------TOP鍵----------------------- */
+
+/* 向上箭頭樣式 */
+
+#scrollUp {
+    bottom: 75px;
+    height: 30px;
+    right: 65px;
+    width: 30px;
+    position: fixed;
+    z-index: 999;
+    /* display: none; */
+}
+
+/* 向上箭頭背景 */
+
+.scrollUpBg {
+    background-color: #f1b432;
+    bottom: 70px;
+    box-shadow: 0 2px 6px 0 rgba(17, 17, 17, 0.5);
+    height: 40px;
+    right: 60px;
+    width: 40px;
+    position: fixed;
+    z-index: 998;
+    opacity: 0;
+    transition: 0.7s all ease;
+}
+
+/* 顯現向上圖案 */
+
+.active {
+    opacity: 1;
+}

@@ -1,0 +1,209 @@
+/* 測試 */
+
+/* 
+body{
+    background-color: #f4f6f9;
+} */
+
+/*------------------ 動手設計 ------------------*/
+
+/* 導覽列底線 */
+
+#navBar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 標題字 */
+
+h2 {
+    color: #f1b432;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+/* 與footer距離 */
+
+#diy {
+    margin-bottom: 50px;
+}
+
+/* 左半部樣式 */
+
+#diyBox {
+    margin-top: 70px;
+    min-height: 600px;
+}
+
+#diyImg {
+    margin-top: 15px;
+    position: relative;
+}
+
+/* canvas位置 */
+
+#d1 {
+    top: 120px;
+    left: 180px;
+}
+
+#imgfbhidden {
+    top: 20px;
+    left: 70px;
+}
+
+/* 選衣服顏色按鈕 */
+
+#fcolor img {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+#fcolor img:hover {
+    border: 1px gray solid;
+    padding: 2px;
+}
+
+.color {
+    margin-bottom: 20px;
+}
+
+/* .colorImg {
+    width: 30px;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 5px;
+} */
+
+/* 圖片控制按鈕樣式 */
+
+.btn:active {
+    box-shadow: none;
+}
+
+.btnStyle {
+    background-color: #eeeeed;
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0, rgba(0, 0, 0, .12) 0 2px 10px 0;
+    margin-right: 10px;
+}
+
+.btnStyle:hover, .btnStyle:focus {
+    background-color: #cccac6;
+    box-shadow: none;
+}
+
+.btnStyle:active {
+    background-color: #bbbab9;
+}
+
+/* 漸層按鈕樣式 */
+
+.btnMainStyle {
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0, rgba(0, 0, 0, .12) 0 2px 10px 0;
+    background: #F2994A;
+    background-image: linear-gradient(120deg, #fda085 0%, #f6d365 120%);
+    border: none;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.btnMainStyle:hover, .btnMainStyle:focus {
+    background: #F2994A;
+    background-image: linear-gradient(120deg, #ff9578 0%, #fad353 120%);
+    box-shadow: none;
+    color: #fff;
+}
+
+.btnMainStyle:active {
+    background: #F2994A;
+    background-image: linear-gradient(120deg, #ff9578 0%, #fad353 120%);
+}
+
+/* 表格樣式 */
+
+#tab1, #tab2 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#tab1 p, #tab2 p {
+    margin: 0px;
+}
+
+.trBorder, .trBorder td {
+    border: 1px solid #bfbfbf;
+}
+
+.tdBg:hover {
+    background-color: #f4f3f6;
+}
+
+td:nth-of-type(1) {
+    width: 100px;
+}
+
+/* 動手設計表格樣式 */
+
+#tab1 input {
+    width: 20px;
+    height: 20px;
+}
+
+/* 作品上傳表格樣式 */
+
+.small {
+    color: gray;
+}
+
+.btn-secondary, .btn-primary {
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0, rgba(0, 0, 0, .12) 0 2px 10px 0;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-primary:hover, .btn-primary:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.form-control {
+    width: 80%;
+    margin: 0px auto;
+}
+
+.form-control:focus {
+    border-color: #f1b432;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/*------------------ 商品購買 ------------------*/
+
+/* 表格樣式 */
+
+.selectTable td {
+    vertical-align: middle;
+}
+
+.selectTable input {
+    vertical-align: bottom;
+}
+
+
+/* 加入購物車按鈕樣式 */
+
+.ajaxbuy {
+    margin-top: 0px;
+}
+
+/* 返回購物按鈕樣式 */
+
+.btn-info {
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0, rgba(0, 0, 0, .12) 0 2px 10px 0;
+}
+
+.btn-info:hover, .btn-info:focus {
+    box-shadow: none;
+    border: none;
+}

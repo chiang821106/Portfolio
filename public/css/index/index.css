@@ -1,0 +1,338 @@
+/* 字體引用 */
+
+@font-face {
+    font-family: Dosis;
+    src: url(../../fonts/Dosis-Medium.otf);
+}
+
+/* 輪播圖片 */
+
+.carouselImg {
+    width: 100%;
+    height: 40vw;
+    margin-top: 70px;
+}
+
+/* 輪播按鈕 */
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel-indicators li {
+    height: 10px;
+    width: 10px;
+    background-color: #666;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/* 分隔線 */
+
+.line {
+    height: 30px;
+    background-color: rgb(233, 157, 94);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, .07) 50%, transparent 50%), linear-gradient(90deg, rgba(255, 255, 255, .13) 50%, transparent 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, .17) 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, .19) 50%);
+    background-size: 13px, 29px, 37px, 53px;
+    opacity: 0.5;
+}
+
+/* ------------關於我們-------------- */
+
+/* 標題 */
+
+.title {
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+    /* color: #f1b432; */
+}
+
+.hrLine {
+    background-image: url(../../img/index/b_simple_114_6L.png);
+    height: 5px;
+    margin-top: 20px;
+}
+
+/* 文章名稱加顏色 */
+
+.heightText {
+    color: #f1b432
+}
+
+/* 區塊格式設定 */
+
+#about {
+    margin-top: 50px;
+    /* margin-bottom: 50px; */
+    padding-top: 30px;
+    /* background-color: #f0d394; */
+}
+
+/* 影片大小 */
+
+#viedoSize {
+    width: 500px;
+}
+
+/* 佳句樣式 */
+
+.goodSentence {
+    font-size: 45px;
+    /* color: #fff; */
+}
+
+/* 右方滾動文字範圍1 */
+
+.textBox {
+    height: 700px;
+}
+
+/* 第一段滾動文字 */
+
+.sticky {
+    position: sticky;
+    top: 90px;
+    z-index: -1;
+    background-color: #fff;
+    color: #f1b432;
+}
+
+/* 右方滾動文字範圍2 */
+
+/* 定位用 */
+
+.textBoxTwo {
+    height: 600px;
+    color: #fff;
+    position: relative;
+    margin-top: 30px;
+    /* top: -130px; */
+}
+
+/* 第二段滾動文字 */
+
+.stickyTwo {
+    position: sticky;
+    top: 120px;
+}
+
+/* 關於我們文字內容 */
+
+.aboutText {
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 8px 0 8px;
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+/* 視差圖設定 */
+
+.parallaxImg {
+    /* margin-top: 50px; */
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* z-index: -99; */
+}
+
+.imgOne {
+    background-image: url(../../img/index/a2.jpg);
+}
+
+.imgTwo {
+    background-image: url(../../img/index/a1.jpg);
+}
+
+.imgThree {
+    background-image: url(../../img/index/c21.jpg);
+}
+
+.imgFour {
+    background-image: url(../../img/index/c1.jpg);
+}
+
+.imgFive {
+    background-image: url(../../img/index/think.jpg);
+    /* height: 500px; */
+}
+
+/* 中間白框 */
+
+.parallaxSection {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* 調整白框內樣式 */
+
+.logoImg {
+    padding: 20px 50px 0 50px;
+    height: 80px;
+}
+
+.parallaxText {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Dosis';
+}
+
+.parallaxText p {
+    margin: 0;
+}
+
+/* TRY IT連結字 */
+
+.parallaxBtn {
+    color: #fff;
+    border: none;
+    /* border: #f1b432 1px solid; */
+    /* background-color:#f1b432 ; */
+    padding: 0px 20px;
+    /* background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); */
+    background: #F2994A;
+    background: -webkit-linear-gradient(to right, #F2994A,#F2C94C);
+    background: linear-gradient(to right, #F2994A,#F2C94C);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+}
+
+.parallaxBtn:hover {
+    color: #f1b432;
+    /* border: #f1b432 1px solid; */
+    background: #fff;
+    /* padding: 0px 20px; */
+    transition-duration: 800ms;
+    box-shadow:  none;
+}
+
+/* 製造橫線 */
+
+.parallaxText:before, .parallaxText:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: #c8c7c7;
+    top: 50%;
+    width: 30%;
+}
+
+/*調整背景橫線的左右距離*/
+
+.parallaxText:before {
+    left: 0%;
+}
+
+/*調整背景橫線的左右距離*/
+
+.parallaxText:after {
+    right: 0%;
+}
+
+/* ------------熱銷設計-------------- */
+
+/* 區塊格式設定 */
+
+#hotSales {
+    margin-top: 50px;
+    padding-top: 30px;
+}
+
+/* 倒數字體大小 */
+
+#time {
+    font-size: 28px;
+}
+
+
+/* 卡片樣式 */
+
+.card {
+    margin-bottom: 50px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.card, .card-body, .card-footer {
+    border: 0;
+}
+
+.card-body, .card-footer {
+    max-height: 50px;
+}
+
+.cardRight {
+    padding: 0;
+}
+
+.cardBox {
+    height: 330px;
+    width: 360px;
+}
+
+.card-title{
+    font-size: 24px;
+}
+/* hover換圖 */
+
+.card {
+    position: relative;
+}
+
+.card-img-top {
+    position: absolute;
+    height: 330px;
+    width: 360px;
+}
+
+@media(max-width: 580px) {
+    .card-img-top {
+        margin-left: 15%;
+    }
+}
+
+.hoverImg {
+    object-fit: cover;
+    
+}
+
+.hoverImg:hover {
+    opacity: 0;
+}
+
+
+.hoverImgB {
+    opacity: 1;
+}
+
+.hoverImgB:hover {
+    opacity: 1;
+    transform: scale(2);
+}
+
+/* 淡入動畫 */
+
+.textAnimationY {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: 0.7s all ease;
+}
+
+.appearY {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+}

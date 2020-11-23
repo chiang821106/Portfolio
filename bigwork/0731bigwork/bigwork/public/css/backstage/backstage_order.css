@@ -1,0 +1,46 @@
+/* -----------------------訂單管理------------------------ */
+
+/* 文字大小 */
+
+.fontsize {
+    font-size: 18px;
+}
+
+/* 標題 */
+
+.title {
+    margin: 115px auto 50px;
+}
+
+/* 輸入框設定 */
+
+.fixedHeight {
+    height: 38px;
+}
+
+.custom-select{
+width: auto;
+vertical-align: top;
+}
+
+/* 日期搜尋紐 */
+.dateSubmit{
+    vertical-align: top;
+}
+
+/* 分隔線 */
+.line{
+    border-color: #343a40;
+}
+
+/* 篩選與上下方間隔 */
+#filter{
+    margin-bottom: 15px;
+}
+
+
+
+/* 表格文字垂直置中 */
+.table td, .table th{
+    vertical-align: middle;
+}

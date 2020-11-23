@@ -1,0 +1,37 @@
+/* 字體引用 */
+body {
+    font-family: '微軟正黑體', sans-serif;
+}
+
+
+/* 各區塊間距 */
+
+.divMargin {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* 字型大小 */
+
+.fontSize {
+    font-size: 22px;
+}
+
+/* 訂單編號樣式 */
+
+.fontStyle {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* 商品圖大小 */
+
+.imgSize {
+    width: 100px;
+    height: 60px;
+}
+
+/* 資料置中 */
+.table td{
+    vertical-align: middle;
+}

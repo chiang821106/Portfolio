@@ -1,0 +1,244 @@
+/*------------- 直接購買 -------------*/
+
+/* 排序樣式 */
+
+.sortBox {
+    margin-top: 100px;
+}
+
+/* 排序 */
+
+.sort {
+    padding: 8px;
+}
+
+/* 標題字 */
+
+.title {
+    color: #f1b432;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+/* 導覽列底線 */
+
+#navBar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 漸層表頭 */
+
+.btnMainStyle {
+    background: #F2994A;
+    background-image: linear-gradient(120deg, #fda085 0%, #f6d365 120%);
+    border: none;
+    /* margin-top: 10px; */
+    color: #fff;
+}
+
+.btnMainStyle:hover, .btnMainStyle:focus {
+    background: #F2994A;
+    background-image: linear-gradient(120deg, #ff9578 0%, #fad353 120%);
+    box-shadow: none;
+    color: #fff;
+}
+
+.btnMainStyle:active {
+    background: #F2994A;
+    background-image: linear-gradient(120deg, #ff9578 0%, #fad353 120%);
+}
+
+/* 卡片樣式 */
+
+.card {
+    margin-bottom: 50px;
+    min-height: 370px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.card, .card-body, .card-footer {
+    border: 0;
+}
+
+.card-body, .card-footer {
+    max-height: 50px;
+}
+
+.cardRight {
+    padding: 0;
+}
+
+.cardBox {
+    height: 240px;
+    width: 210px;
+}
+
+/* hover換圖 */
+
+.card {
+    position: relative;
+}
+
+.card-img-top {
+    position: absolute;
+    height: 220px;
+    width: 190px;
+}
+
+@media(max-width: 580px) {
+    .card-img-top {
+        margin-left: 15%;
+    }
+}
+
+.hoverImg {
+    object-fit: contain;
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0, rgba(0, 0, 0, .12) 0 2px 10px 0;
+    background-color: #fff;
+}
+
+.hoverImg:hover {
+    opacity: 0;
+    box-shadow: none;
+}
+
+.caption h4 {
+    margin-top: 10px;
+}
+
+/*------------- 購物車 -------------*/
+/* 背景 */
+.bodyBg{
+    background-color: #f4f6f9;
+}
+/* input樣式 */
+
+.quantity:focus {
+    border-color: #f1b432;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #fafafa;
+}
+
+/* 訂單表格樣式 */
+
+.tableStyle {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #e4e8f0;
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0, rgba(0, 0, 0, .12) 0 2px 10px 0;
+    margin-bottom: 20px;
+}
+
+/* 表格樣式 */
+
+.Products td {
+    border-bottom: #dee2e6 1px solid;
+    vertical-align: middle;
+}
+
+.totalText{
+    vertical-align: middle !important;
+}
+
+/* 按鈕樣式 */
+
+.btn:active {
+    box-shadow: none;
+}
+
+.btnBill {
+    background-color: #f1b432;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0, rgba(0, 0, 0, .12) 0 2px 10px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btnBill:hover, .btnBill:focus {
+    color: #fff;
+    background-color: #df9f17;
+    box-shadow: none;
+}
+
+.btnBill:active {
+    background-color: #b8861c;
+}
+
+.btn-info{
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0, rgba(0, 0, 0, .12) 0 2px 10px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-info:hover,.btn-info:focus{
+    box-shadow:none;
+    border: none;
+}
+
+/*------------- 訂單確認 -------------*/
+/* 表單樣式 */
+
+.form-control:focus {
+    border-color: #f1b432;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #fafafa;
+}
+
+.form-inline label {
+    text-align: right;
+    display: inline;
+    margin-right: 30px;
+}
+
+.textPadding{
+    padding-right: 25px !important;
+}
+
+/* 表單抬頭 */
+
+.formTitle {
+    border-bottom: solid 2px #f1b432;
+    padding-top:30px;
+    padding-bottom: 10px;
+    /* margin-top: 30px; */
+    margin-bottom: 20px;
+}
+
+/* 表單背景 */
+
+.formTitleBg {
+    background-color: #fff;
+    border-radius: 5px 5px 0px 0px;
+    border: solid #e4e8f0;
+    border-width: 1px 1px 0px 1px;
+    box-shadow: rgba(0, 0, 0, .16) 0 2px 5px 0;
+    padding-bottom: 30px;
+}
+
+.formBg {
+    background-color: #fff;
+    border-radius: 0px 0px 5px 5px;
+    border: solid #e4e8f0;
+    border-width: 0px 1px 1px 1px;
+    box-shadow: rgba(0, 0, 0, .16) 0 5px 5px 0;
+    padding-top: 30px;
+}
+
+.form-group{
+    padding-left: 15px;
+}
+
+.form-inline label {
+    text-align: right;
+    display: inline;
+    margin-right: 30px;
+}
+
+/* 付款方式對齊 */
+.radio{
+    padding-left: 7%;
+}
